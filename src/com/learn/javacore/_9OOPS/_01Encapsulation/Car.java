@@ -1,4 +1,4 @@
-package com.learn.javacore._9OOPS._01Incapsulation;
+package com.learn.javacore._9OOPS._01Encapsulation;
 
 //1.Encapsulation (member+method)  in single unit
 public class Car {

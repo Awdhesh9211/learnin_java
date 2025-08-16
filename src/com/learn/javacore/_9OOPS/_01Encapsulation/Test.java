@@ -1,4 +1,4 @@
-package com.learn.javacore._9OOPS._01Incapsulation;
+package com.learn.javacore._9OOPS._01Encapsulation;
 
 public class Test {
 
