@@ -1,123 +1,71 @@
 # Encapsulation in Java
 
-Encapsulation = **Data Hiding + Controlled Access**.  
-It wraps **fields (variables)** and **methods (functions)** inside a class and restricts direct access.
+Encapsulation is one of the **four core OOP (Object-Oriented Programming) principles**.  
+It is the process of **wrapping data (variables) and methods (functions) into a single unit (class)** and restricting direct access to some components of an object.
 
 ---
 
-## 🔑 Key Rules
-1. Variables should be **private**.
-2. Provide **public getters and setters** to access/update data.
-3. Add **validation logic** inside setters to ensure data integrity.
+## 🚀 Key Points of Encapsulation
+1. **Data Hiding**
+    - Instance variables (fields) are declared as **private**.
+    - This prevents direct modification of data from outside the class.
+
+2. **Controlled Access**
+    - We provide **public getter and setter methods** to access and update private variables.
+    - This ensures **validation and control** over data.
+
+3. **Security & Maintainability**
+    - Data is safe from unauthorized access.
+    - Any internal change in a class does not affect other classes.
 
 ---
 
-## ✅ Example 1: Student Class
+## ✅ Syntax Example
+
 ```java
+// Example of Encapsulation
+package com.learn.javacore._08Encapsulation;
+
 class Student {
+    // Private data members - Data Hiding
     private String name;
     private int age;
 
-    // Getter and Setter
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+    // Getter method for 'name'
+    public String getName() {
+        return name;
+    }
 
-    public int getAge() { return age; }
+    // Setter method for 'name'
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    // Getter method for 'age'
+    public int getAge() {
+        return age;
+    }
+
+    // Setter method for 'age' with validation
     public void setAge(int age) {
         if(age > 0) {
             this.age = age;
         } else {
-            System.out.println("Invalid Age!");
+            System.out.println("Age must be positive!");
         }
     }
 }
-✅ Example 2: BankAccount
-java
-Copy
-Edit
-class BankAccount {
-    private String accountNumber;
-    private double balance;
 
-    public BankAccount(String accountNumber, double balance) {
-        this.accountNumber = accountNumber;
-        this.balance = balance;
-    }
+public class EncapsulationDemo {
+    public static void main(String[] args) {
+        Student s = new Student();
 
-    // Only getter for accountNumber (read-only)
-    public String getAccountNumber() {
-        return accountNumber;
-    }
+        // Setting values through setter
+        s.setName("Awdhesh");
+        s.setAge(22);
 
-    // Getter for balance
-    public double getBalance() {
-        return balance;
-    }
-
-    // Deposit method with validation
-    public void deposit(double amount) {
-        if (amount > 0) {
-            balance += amount;
-        } else {
-            System.out.println("Invalid Deposit Amount");
-        }
-    }
-
-    // Withdraw method with validation
-    public void withdraw(double amount) {
-        if (amount > 0 && amount <= balance) {
-            balance -= amount;
-        } else {
-            System.out.println("Invalid Withdraw Amount");
-        }
+        // Getting values through getter
+        System.out.println("Student Name: " + s.getName());
+        System.out.println("Student Age: " + s.getAge());
     }
 }
-Usage:
-
-java
-Copy
-Edit
-BankAccount acc = new BankAccount("ACC123", 5000);
-acc.deposit(1500);
-acc.withdraw(2000);
-System.out.println("Balance: " + acc.getBalance());
-✅ Example 3: Employee
-java
-Copy
-Edit
-class Employee {
-    private int id;
-    private String name;
-    private double salary;
-
-    // Getters and Setters
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
-
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
-
-    public double getSalary() { return salary; }
-    public void setSalary(double salary) {
-        if (salary >= 10000) {
-            this.salary = salary;
-        } else {
-            System.out.println("Salary must be at least 10,000");
-        }
-    }
-}
-🎯 Benefits of Encapsulation
-✅ Protects sensitive data (balance, salary, etc.)
-
-✅ Ensures validation (age > 0, salary ≥ 10000, balance ≥ 0)
-
-✅ Can provide read-only/write-only properties
-
-✅ Improves code security, maintainability, and reusability
-
-📝 Real-Life Analogy
-ATM Machine: You don’t access the bank’s database directly.
-
-You interact with an interface (ATM screen → public methods).
-
-Actual data (your balance → private fields) is hidden.
