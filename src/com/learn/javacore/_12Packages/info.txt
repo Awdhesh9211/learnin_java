@@ -1,0 +1,12 @@
+package - folder name
+class path - test1/Test
+
+test1>javac Test
+test1>cd ..
+>java test/Test
+
+convention of package
+com.engineer.javacore
+
+only public class can be a accessible
+access by samePackageObjectPublicClass.new OtherClass(0
