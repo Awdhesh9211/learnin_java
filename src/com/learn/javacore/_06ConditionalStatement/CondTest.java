@@ -1,5 +1,7 @@
 package com.learn.javacore._06ConditionalStatement;
 
+import java.util.Scanner;
+
 public class CondTest {
 
     public static void main(String[] args) {
@@ -62,6 +64,18 @@ public class CondTest {
             default:
                 System.out.println("Invalid Day!");
         }
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter day num.");
+        day=sc.nextInt();
+
+        String[] days = new String[]{"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+        try{
+            System.out.println(days[day]);
+        } catch (Exception e) {
+            System.out.println(" Invalid Day! ");
+        }
+
+
 
         // -------------------------------
         // TERNARY Operator (Short If-Else)
