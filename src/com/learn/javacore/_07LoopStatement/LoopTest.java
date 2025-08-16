@@ -2,26 +2,54 @@ package com.learn.javacore._07LoopStatement;
 
 public class LoopTest {
 
-
     public static void main(String[] args) {
 
-        //for loop
-        for(int i=0;i<=3;i++){
-            System.out.println("FOR LOOP");
+        // -------------------------------
+        // 1. FOR LOOP (Traditional)
+        // -------------------------------
+        System.out.println("=== FOR LOOP ===");
+        for (int i = 0; i < 4; i++) {
+            System.out.println("Iteration: " + i);
         }
-        //for :
-        for(char c:new char[]{'a','b','c'}){
-            System.out.printf("FOR : %c\n",c);
+
+        // -------------------------------
+        // 2. FOR-EACH LOOP (Enhanced For Loop)
+        // -------------------------------
+        System.out.println("\n=== FOR-EACH LOOP ===");
+        char[] chars = {'a', 'b', 'c'};
+        for (char c : chars) {
+            System.out.println("Character: " + c);
         }
-        //while
-        int i=2;
-        while(i>0){
-            System.out.println("WHILE "+i);
+
+        // -------------------------------
+        // 3. WHILE LOOP
+        // -------------------------------
+        System.out.println("\n=== WHILE LOOP ===");
+        int i = 3;
+        while (i > 0) {
+            System.out.println("Countdown: " + i);
             i--;
         }
-        //DO-WHILE
-        do{
-            System.out.println("DO once ");
-        }while(false);
+
+        // -------------------------------
+        // 4. DO-WHILE LOOP
+        // -------------------------------
+        System.out.println("\n=== DO-WHILE LOOP ===");
+        int num = 1;
+        do {
+            System.out.println("This runs at least once → num = " + num);
+            num--;
+        } while (num > 0);
+
+        // -------------------------------
+        // 5. NESTED LOOP Example
+        // -------------------------------
+        System.out.println("\n=== NESTED LOOP ===");
+        for (int row = 1; row <= 3; row++) {
+            for (int col = 1; col <= 3; col++) {
+                System.out.print(row * col + " "); // Multiplication table
+            }
+            System.out.println();
+        }
     }
 }
