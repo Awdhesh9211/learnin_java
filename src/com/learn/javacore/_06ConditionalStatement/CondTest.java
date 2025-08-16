@@ -2,40 +2,71 @@ package com.learn.javacore._06ConditionalStatement;
 
 public class CondTest {
 
-
     public static void main(String[] args) {
-        int age=50;
-        int marks=35;
+        int age = 50;
+        int marks = 35;
+        int day = 0;
 
-        // IF
-        if(age>30) System.out.println("Good");
-        // IF-ELSE
-        if(age>30){
-            System.out.println("Bad");
-        }else{
-            System.out.println("Good");
-        }
-        // ELSE_IF
-        if(age>60){
-            System.out.println("stage 1");
-        }else if(marks >34){
-            System.out.println("stage 2");
-        }else{
-            System.out.println("stage 3");
+        // -------------------------------
+        // IF Statement
+        // -------------------------------
+        if (age > 30) {
+            System.out.println("Age is greater than 30 → Good!");
         }
 
-        int day=0;
-        // Switch
-        switch(day){
+        // -------------------------------
+        // IF-ELSE Statement
+        // -------------------------------
+        if (age < 30) {
+            System.out.println("Age is less than 30 → Young!");
+        } else {
+            System.out.println("Age is greater or equal to 30 → Mature!");
+        }
+
+        // -------------------------------
+        // IF-ELSE IF Ladder
+        // -------------------------------
+        if (age > 60) {
+            System.out.println("Stage 1: Senior Citizen");
+        } else if (marks > 34) {
+            System.out.println("Stage 2: Pass");
+        } else {
+            System.out.println("Stage 3: Fail");
+        }
+
+        // -------------------------------
+        // SWITCH Statement
+        // -------------------------------
+        switch (day) {
             case 0:
-                System.out.println("SUNDAY");
+                System.out.println("Day: Sunday");
                 break;
             case 1:
-                System.out.println("MONDAY");
+                System.out.println("Day: Monday");
+                break;
+            case 2:
+                System.out.println("Day: Tuesday");
+                break;
+            case 3:
+                System.out.println("Day: Wednesday");
+                break;
+            case 4:
+                System.out.println("Day: Thursday");
+                break;
+            case 5:
+                System.out.println("Day: Friday");
+                break;
+            case 6:
+                System.out.println("Day: Saturday");
                 break;
             default:
-                System.out.println("FFFF");
-
+                System.out.println("Invalid Day!");
         }
+
+        // -------------------------------
+        // TERNARY Operator (Short If-Else)
+        // -------------------------------
+        String result = (marks >= 35) ? "PASS ✅" : "FAIL ❌";
+        System.out.println("Result based on marks: " + result);
     }
 }
